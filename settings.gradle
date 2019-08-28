@@ -1,2 +1,2 @@
 //include ':encryption', ':call', ':fourclickevent', ':layoutandlog', ':login'
-include ':login'
+include ':login', ':sd'
