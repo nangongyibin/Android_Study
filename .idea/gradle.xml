@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/call" />
             <option value="$PROJECT_DIR$/encryption" />
+            <option value="$PROJECT_DIR$/fourclickevent" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
