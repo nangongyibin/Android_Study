@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void click(View view) {
         //动态申请权限
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CALL_PHONE},7219);
-        }else{
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 7219);
+        } else {
             call();
         }
     }
@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private void call() {
         String phone = mPhone.getText().toString().trim();
-        if (phone==null){
+        if (phone == null) {
             Toast.makeText(this, "phone is null", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("tel:"+phone));
+            intent.setData(Uri.parse("tel:" + phone));
             startActivity(intent);
         }
     }
@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode==7219){
-            if (permissions[0]==Manifest.permission.CALL_PHONE){
-                if (grantResults[0]==PackageManager.PERMISSION_GRANTED){
+        if (requestCode == 7219) {
+            if (permissions[0].equals(Manifest.permission.CALL_PHONE)) {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     call();
                 }
             }
-        }else{
+        } else {
             Toast.makeText(this, "请给予打电话的权限", Toast.LENGTH_SHORT).show();
         }
     }
