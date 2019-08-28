@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/call" />
             <option value="$PROJECT_DIR$/encryption" />
             <option value="$PROJECT_DIR$/fourclickevent" />
+            <option value="$PROJECT_DIR$/layoutandlog" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

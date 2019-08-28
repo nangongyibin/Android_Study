@@ -1,1 +1,1 @@
-include ':encryption', ':call', ':fourclickevent'
+include ':encryption', ':call', ':fourclickevent', ':layoutandlog'
