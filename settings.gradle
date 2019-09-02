@@ -1,2 +1,3 @@
+include ':listview'
 //include ':encryption', ':call', ':fourclickevent', ':layoutandlog', ':login'
-include ':login', ':sd'
+//include ':login', ':sd', ':xml'
