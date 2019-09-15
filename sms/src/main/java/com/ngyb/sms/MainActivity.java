@@ -1,75 +1,87 @@
 package com.ngyb.sms;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.drm.DrmStore;
 import android.graphics.Color;
 import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView mLv;
-    private String[] smss = {"欲，寄一份情，陪在远方的你。欲，借一首曲，陪若在眼前的你。欲，给一颗心，陪在我心底的你，欲，用这一生，爱慕只在乎的你。",
-            "白色情人节，送你七彩画卷：红色是爱恋，热情只增不减；橙色是希望，放飞共同梦想；黄色是幸福，执手浪漫一生；绿色是信任，忠于彼此不变；蓝色是思念，时刻心儿相连；靛蓝是自由，用责任去守侯；紫色是关爱，体贴照顾不烦。亲爱的，情人节快乐！",
-            "偷我情，盗我心，决定告你上法庭，判你终生嫁给我；懂我心，明我意，跟我办理结婚证；爱上你，恋上你，天天都想拥有你！",
-            "一条红线把缘牵，两情相悦把爱恋，三顾茅庐把你约，四面楚歌情敌战，五花八门哄你欢，六神无主看见你，七上八下想娶你，九死一生都爱你，十全十美来联姻。嫁给我，你就是我的唯一。",
-            "不经意间，相遇；不经意间，相惜；不经意间，刻骨；不经意间，铭记；不经意间，爱上了你。看似不经意，但我真的很在意。",
-            "等待一次日出，需要一天；等待一次月圆，需要一月；等待一次花开，需要一年；等待一次“爱你一生一世”，需要一辈子。亲爱的，你的一辈子，请让我来承担。"};
+    private EditText mEtContent;
+    private EditText mEtPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 921);
+        }
         setContentView(R.layout.activity_main);
-        mLv = findViewById(R.id.lv);
-        init();
+        mEtContent = findViewById(R.id.et_content);
+        mEtPhone = findViewById(R.id.et_phone);
     }
 
-    private void init() {
-        mLv.setAdapter(new MyAdapter());
-        mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Uri uri = Uri.parse("smsto:18534867219");
-                Intent intent = new Intent(Intent.ACTION_SENDTO,uri);
-                intent.putExtra("sms_body",smss[position]);
-                startActivity(intent);
-            }
-        });
+
+    public void send(View view) {
+        String content = mEtContent.getText().toString().trim();
+        String phone = mEtPhone.getText().toString().trim();
+        SmsManager sms = SmsManager.getDefault();
+        List<String> contents = sms.divideMessage(content);
+        for (String s : contents) {
+            sms.sendTextMessage(phone,null,s,null,null);
+        }
+        Toast.makeText(this, "短信发送成功", Toast.LENGTH_SHORT).show();
     }
 
-    public class MyAdapter extends BaseAdapter{
+    public void insert_content(View view) {
+        Intent intent = new Intent(this, SmsActivity.class);
+        startActivityForResult(intent, 9127);
+    }
 
-        @Override
-        public int getCount() {
-            return smss.length;
+    public void addContract(View view) {
+        Intent intent = new Intent(this, PhoneActivity.class);
+        startActivityForResult(intent, 7219);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == 521 && data != null) {
+            String phone = data.getStringExtra("phone");
+            mEtPhone.setText(phone);
         }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
+        if (resultCode == 520 && data != null) {
+            String content = data.getStringExtra("content");
+            mEtContent.setText(content);
         }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView ==null){
-                convertView = new TextView(MainActivity.this);
-            }
-            ((TextView)convertView).setText(smss[position]);
-            ((TextView)convertView).setTextSize(23f);
-            ((TextView)convertView).setTextColor(Color.BLACK);
-            return convertView;
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "发送短信的权限获取成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "发送短信的权限获取失败", Toast.LENGTH_SHORT).show();
         }
     }
 }
