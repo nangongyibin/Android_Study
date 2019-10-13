@@ -1,23 +1,22 @@
 package com.ngyb.photoorvideo;
 
 import android.annotation.SuppressLint;
-import android.app.Service;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
-import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -47,21 +46,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        WindowManager wm = (WindowManager) getSystemService(Service.WINDOW_SERVICE);
-        Display defaultDisplay = wm.getDefaultDisplay();
-        Point point = new Point();
-        defaultDisplay.getSize(point);
-        mWidth = point.x;
-        mHeight = point.y;
-        mIv = findViewById(R.id.iv);
-        mIvC = findViewById(R.id.ivC);
-        copyBitmap();
-        mIvPalette = findViewById(R.id.ivPalette);
-        mIvPalettePre = findViewById(R.id.ivPalettePre);
+//        WindowManager wm = (WindowManager) getSystemService(Service.WINDOW_SERVICE);
+//        Display defaultDisplay = wm.getDefaultDisplay();
+//        Point point = new Point();
+//        defaultDisplay.getSize(point);
+//        mWidth = point.x;
+//        mHeight = point.y;
+//        mIv = findViewById(R.id.iv);
+//        mIvC = findViewById(R.id.ivC);
+//        copyBitmap();
+//        mIvPalette = findViewById(R.id.ivPalette);
+//        mIvPalettePre = findViewById(R.id.ivPalettePre);
 //        initPalette();
-        initMosatsu();
+//        initMosatsu();
 //        initSfv();
-        initVideoView();
+//        initVideoView();
     }
 
     private void initVideoView() {
@@ -265,5 +264,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
+    }
+
+    public void playPhoto(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        File file = new File(getFilesDir().getPath(), "1.png");
+        Uri uri = Uri.fromFile(file);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
+        startActivityForResult(intent,7219);
+    }
+
+    public void playVideo(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        File file = new File(getFilesDir().getPath(), "2.3pg");
+        Uri uri = Uri.fromFile(file);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
+        startActivityForResult(intent,9127);
     }
 }

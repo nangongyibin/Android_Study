@@ -7,6 +7,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍照"
+        android:onClick="playPhoto"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="录视频"
+        android:onClick="playVideo"/>
     <VideoView
         android:id="@+id/vv"
         android:layout_width="wrap_content"
