@@ -72,4 +72,9 @@
         android:layout_height="wrap_content"
         android:onClick="click10"
         android:text="买豆" />
+
+    <SeekBar
+        android:id="@+id/sb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

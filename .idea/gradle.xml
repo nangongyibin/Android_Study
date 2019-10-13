@@ -8,8 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/serve" />
-            <option value="$PROJECT_DIR$/service" />
+            <option value="$PROJECT_DIR$/photoorvideo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

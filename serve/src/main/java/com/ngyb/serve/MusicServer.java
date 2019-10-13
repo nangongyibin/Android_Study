@@ -12,4 +12,6 @@ public interface MusicServer {
     public void pause();
 
     public void continuePlay();
+
+    public void playPosition(int position);
 }

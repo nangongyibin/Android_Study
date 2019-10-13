@@ -1,21 +1,26 @@
 package com.ngyb.serve;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
-import android.os.IBinder;
-import android.os.RemoteException;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.ngyb.service.AidlInterface;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -31,24 +36,38 @@ public class MainActivity extends AppCompatActivity {
     private IServer mIServer;
     private MusicServer mMusicServer;
     private AidlInterface mAidlInterface;
+    private static SeekBar mSb;
+    @SuppressLint("HandlerLeak")
+    public static Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Bundle data = msg.getData();
+            int max = data.getInt("max");
+            int current = data.getInt("current");
+            mSb.setMax(max);
+            mSb.setProgress(current);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mSb = findViewById(R.id.sb);
         if (ActivityCompat.checkSelfPermission(this, str[0]) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this,
                 str[1]) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, str[2]) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, str[3]) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, str, 1);
         }
 //        Intent intent = new Intent(this, CertificateService.class);
 //        bindService(intent, new myServiceConnection(), BIND_AUTO_CREATE);
-//        Intent intent1 = new Intent(this, MusicSerivce.class);
+        Intent intent1 = new Intent(this, MusicSerivce.class);
 ////        startService(intent1);
-//        bindService(intent1, new myServiceConnection(), BIND_AUTO_CREATE);
-        Intent intent2 = new Intent();
-        intent2.setAction("ngyb.ltz");
-        intent2.setPackage("com.ngyb.service");
-        bindService(intent2, new myServiceConnection(), BIND_AUTO_CREATE);
+        bindService(intent1, new myServiceConnection(), BIND_AUTO_CREATE);
+//        Intent intent2 = new Intent();
+//        intent2.setAction("ngyb.ltz");
+//        intent2.setPackage("com.ngyb.service");
+//        bindService(intent2, new myServiceConnection(), BIND_AUTO_CREATE);
     }
 
     @Override
@@ -150,8 +169,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
 //            mIServer = (IServer) service;
-//            mMusicServer = (MusicServer) service;
-            mAidlInterface = AidlInterface.Stub.asInterface(service);
+            mMusicServer = (MusicServer) service;
+//            mAidlInterface = AidlInterface.Stub.asInterface(service);
         }
 
         @Override
@@ -159,4 +178,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
 }
