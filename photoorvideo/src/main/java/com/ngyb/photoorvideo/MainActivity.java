@@ -14,10 +14,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private Bitmap mBitmapC;
     private Bitmap mBitmapC1;
     private ImageView mIvPalettePre;
+    private SurfaceView mSfv;
+    private VideoView mVv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,58 @@ public class MainActivity extends AppCompatActivity {
         mIvPalettePre = findViewById(R.id.ivPalettePre);
 //        initPalette();
         initMosatsu();
+//        initSfv();
+        initVideoView();
+    }
+
+    private void initVideoView() {
+        try {
+            mVv = findViewById(R.id.vv);
+            mVv.setVideoPath("http://it.nangongyibin.com:8080/resource/cc.mp4");
+            mVv.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initSfv() {
+        mSfv = findViewById(R.id.sfv);
+        SurfaceHolder holder = mSfv.getHolder();
+        holder.addCallback(new SurfaceHolder.Callback() {
+
+            private MediaPlayer mMediaPlayer;
+            private int currentPosition;
+            @Override
+            public void surfaceCreated(SurfaceHolder holder) {
+                try {
+                    mMediaPlayer = new MediaPlayer();
+                    mMediaPlayer.setDataSource("http://it.nangongyibin.com:8080/resource/cc.mp4");
+                    mMediaPlayer.prepareAsync();
+                    mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                        @Override
+                        public void onPrepared(MediaPlayer mp) {
+                            mp.start();
+                            mp.seekTo(currentPosition);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+                if (mSfv!=null && mMediaPlayer.isPlaying()){
+                    currentPosition = mMediaPlayer.getCurrentPosition();
+                    mMediaPlayer.stop();
+                }
+            }
+
+            @Override
+            public void surfaceDestroyed(SurfaceHolder holder) {
+
+            }
+        });
     }
 
     private void initMosatsu() {

@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <VideoView
+        android:id="@+id/vv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <SurfaceView
+        android:id="@+id/sfv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,9 +62,9 @@
 
 
     <Button
-        android:onClick="net"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="net"
         android:text="播放网络音乐" />
 
     <RelativeLayout

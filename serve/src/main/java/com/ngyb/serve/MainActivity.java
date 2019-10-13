@@ -68,6 +68,22 @@ public class MainActivity extends AppCompatActivity {
 //        intent2.setAction("ngyb.ltz");
 //        intent2.setPackage("com.ngyb.service");
 //        bindService(intent2, new myServiceConnection(), BIND_AUTO_CREATE);
+        mSb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                mMusicServer.playPosition(seekBar.getProgress());
+            }
+        });
     }
 
     @Override
