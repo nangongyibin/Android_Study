@@ -1,3 +1,4 @@
+include ':layout'
 //include ':serve'
 //include ':br'
 //include ':listview'
@@ -5,7 +6,7 @@
 //include ':delay'
 //include ':sms'
 //include ':br'
-include ':animation'
+//include ':animation'
 //include  ':contentprovider', ':contentproviderhandle'
 //include ':encryption'
 //include ':call'
