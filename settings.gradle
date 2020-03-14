@@ -7,7 +7,7 @@
 //include ':sms'
 //include ':br'
 //include ':animation'
-include  ':contentprovider', ':contentproviderhandle'
+include  ':contentprovider', ':contentproviderhandle', ':andresguard'
 //include ':encryption'
 //include ':call'
 //include ':fourclickevent'

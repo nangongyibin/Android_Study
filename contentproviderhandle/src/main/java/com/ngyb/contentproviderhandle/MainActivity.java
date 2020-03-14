@@ -1,12 +1,17 @@
 package com.ngyb.contentproviderhandle;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -187,6 +192,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void make(View view) {
+        setDefault(view);
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    private void setDefault(View view) {
+        Intent intent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
+        intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, getPackageName());
+        startActivityForResult(intent, 9127);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 9127) {
+            smsRestore();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void smsRestore() {
         try {
             Uri uri = Uri.parse("content://sms/");
             ContentValues values = new ContentValues();
@@ -225,24 +249,24 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse("content://com.android.contacts/raw_contacts");
         Uri uri1 = Uri.parse("content://com.android.contacts/data");
         Cursor cursor = getContentResolver().query(uri, new String[]{"contact_id"}, null, null, null);
-        int count = cursor.getCount()+1;
+        int count = cursor.getCount() + 1;
         ContentValues value0 = new ContentValues();
-        value0.put("contact_id",count);
+        value0.put("contact_id", count);
         getContentResolver().insert(uri, value0);
         ContentValues value1 = new ContentValues();
-        value1.put("raw_contact_id",count);
-        value1.put("data1",name);
-        value1.put("mimetype","vnd.android.cursor.item/name");
-        getContentResolver().insert(uri1,value1);
+        value1.put("raw_contact_id", count);
+        value1.put("data1", name);
+        value1.put("mimetype", "vnd.android.cursor.item/name");
+        getContentResolver().insert(uri1, value1);
         ContentValues value2 = new ContentValues();
-        value2.put("raw_contact_id",count);
-        value2.put("data1",phone);
-        value2.put("mimetype","vnd.android.cursor.item/phone_v2");
-        getContentResolver().insert(uri1,value2);
+        value2.put("raw_contact_id", count);
+        value2.put("data1", phone);
+        value2.put("mimetype", "vnd.android.cursor.item/phone_v2");
+        getContentResolver().insert(uri1, value2);
         ContentValues value3 = new ContentValues();
-        value3.put("raw_contact_id",count);
-        value3.put("data1",email);
-        value3.put("mimetype","vnd.android.cursor.item/email_v2");
-        getContentResolver().insert(uri1,value3);
+        value3.put("raw_contact_id", count);
+        value3.put("data1", email);
+        value3.put("mimetype", "vnd.android.cursor.item/email_v2");
+        getContentResolver().insert(uri1, value3);
     }
 }
