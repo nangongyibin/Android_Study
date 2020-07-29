@@ -12,4 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DECODEFILE" />
+
+    <Button
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="活动中不使用布局文件，代码中给" />
 </LinearLayout>
