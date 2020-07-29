@@ -10,7 +10,7 @@
 //include ':br'
 //include ':animation'
 //include  ':contentprovider', ':contentproviderhandle'
-include ':encryption', ':hs'
+include ':encryption', ':hs', ':othertest'
 //include ':call'
 //include ':fourclickevent'
 //include ':layoutandlog'
