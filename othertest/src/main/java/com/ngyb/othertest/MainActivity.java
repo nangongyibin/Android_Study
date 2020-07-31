@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     private Button decodeFile;
     private Button layout;
+    private Button cl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initListener() {
         decodeFile.setOnClickListener(this);
         layout.setOnClickListener(this);
+        cl.setOnClickListener(this);
     }
 
     private void initView() {
         decodeFile = findViewById(R.id.decodeFile);
         layout = findViewById(R.id.layout);
+        cl = findViewById(R.id.cl);
     }
 
     @Override
@@ -45,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.layout:
                 Intent intent = new Intent(this, LayoutActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.cl:
+                Intent intent1 = new Intent(this, ClActivity.class);
+                startActivity(intent1);
                 break;
         }
     }
