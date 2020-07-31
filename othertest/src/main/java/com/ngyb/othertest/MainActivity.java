@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button downloadOrUpload;
     private Button event;
     private Button level;
+    private Button multipleentries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         downloadOrUpload.setOnClickListener(this);
         event.setOnClickListener(this);
         level.setOnClickListener(this);
+        multipleentries.setOnClickListener(this);
     }
 
     private void initView() {
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         downloadOrUpload = findViewById(R.id.downloadOrUpload);
         event = findViewById(R.id.event);
         level = findViewById(R.id.level);
+        multipleentries = findViewById(R.id.multipleentries);
     }
 
     @Override
@@ -73,6 +76,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.level:
                 Intent intent4 = new Intent(this, LevelActivity.class);
                 startActivity(intent4);
+                break;
+            case R.id.multipleentries:
+                Intent intent5 = new Intent(this, MultipleEntriesActivity.class);
+                startActivity(intent5);
                 break;
         }
     }

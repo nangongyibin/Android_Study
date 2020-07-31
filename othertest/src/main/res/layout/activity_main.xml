@@ -42,4 +42,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="level" />
+
+    <Button
+        android:id="@+id/multipleentries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多条目" />
 </LinearLayout>

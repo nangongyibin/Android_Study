@@ -25,5 +25,6 @@
         <activity android:name=".DownloadOrUploadActivity" />
         <activity android:name=".EventActivity" />
         <activity android:name=".LevelActivity" />
+        <activity android:name=".MultipleEntriesActivity" />
     </application>
 </manifest>
