@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button cl;
     private Button downloadOrUpload;
     private Button event;
+    private Button level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cl.setOnClickListener(this);
         downloadOrUpload.setOnClickListener(this);
         event.setOnClickListener(this);
+        level.setOnClickListener(this);
     }
 
     private void initView() {
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cl = findViewById(R.id.cl);
         downloadOrUpload = findViewById(R.id.downloadOrUpload);
         event = findViewById(R.id.event);
+        level = findViewById(R.id.level);
     }
 
     @Override
@@ -66,6 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.event:
                 Intent intent3 = new Intent(this, EventActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.level:
+                Intent intent4 = new Intent(this, LevelActivity.class);
+                startActivity(intent4);
                 break;
         }
     }
