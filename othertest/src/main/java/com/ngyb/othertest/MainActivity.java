@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button decodeFile;
     private Button layout;
     private Button cl;
+    private Button downloadOrUpload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         decodeFile.setOnClickListener(this);
         layout.setOnClickListener(this);
         cl.setOnClickListener(this);
+        downloadOrUpload.setOnClickListener(this);
     }
 
     private void initView() {
         decodeFile = findViewById(R.id.decodeFile);
         layout = findViewById(R.id.layout);
         cl = findViewById(R.id.cl);
+        downloadOrUpload = findViewById(R.id.downloadOrUpload);
     }
 
     @Override
@@ -52,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.cl:
                 Intent intent1 = new Intent(this, ClActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.downloadOrUpload:
+                Intent intent2 = new Intent(this, DownloadOrUploadActivity.class);
+                startActivity(intent2);
                 break;
         }
     }
