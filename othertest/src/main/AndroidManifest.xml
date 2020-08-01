@@ -28,8 +28,10 @@
         <activity android:name=".LevelActivity" />
         <activity android:name=".MultipleEntriesActivity" />
         <activity android:name=".ScrollActivity" />
-        <activity android:name=".OneActivity"
-            android:launchMode="singleTask"/>
+        <activity
+            android:name=".OneActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".TwoActivity" />
+        <activity android:name=".VgActivity" />
     </application>
 </manifest>

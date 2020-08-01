@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button multipleentries;
     private Button scroll;
     private Button testIntent;
+    private Button vg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         multipleentries.setOnClickListener(this);
         scroll.setOnClickListener(this);
         testIntent.setOnClickListener(this);
+        vg.setOnClickListener(this);
     }
 
     private void initView() {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         multipleentries = findViewById(R.id.multipleentries);
         scroll = findViewById(R.id.scroll);
         testIntent = findViewById(R.id.testIntent);
+        vg = findViewById(R.id.vg);
     }
 
     @Override
@@ -95,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.testIntent:
                 Intent intent7 = new Intent(this, OneActivity.class);
                 startActivity(intent7);
+                break;
+            case R.id.vg:
+                Intent intent8 = new Intent(this, VgActivity.class);
+                startActivity(intent8);
                 break;
         }
     }
