@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button event;
     private Button level;
     private Button multipleentries;
+    private Button scroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         event.setOnClickListener(this);
         level.setOnClickListener(this);
         multipleentries.setOnClickListener(this);
+        scroll.setOnClickListener(this);
     }
 
     private void initView() {
@@ -49,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         event = findViewById(R.id.event);
         level = findViewById(R.id.level);
         multipleentries = findViewById(R.id.multipleentries);
+        scroll = findViewById(R.id.scroll);
+
     }
 
     @Override
@@ -80,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.multipleentries:
                 Intent intent5 = new Intent(this, MultipleEntriesActivity.class);
                 startActivity(intent5);
+                break;
+            case R.id.scroll:
+                Intent intent6 = new Intent(this, ScrollActivity.class);
+                startActivity(intent6);
                 break;
         }
     }

@@ -26,5 +26,6 @@
         <activity android:name=".EventActivity" />
         <activity android:name=".LevelActivity" />
         <activity android:name=".MultipleEntriesActivity" />
+        <activity android:name=".ScrollActivity" />
     </application>
 </manifest>
