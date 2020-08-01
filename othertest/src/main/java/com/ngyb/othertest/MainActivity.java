@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button level;
     private Button multipleentries;
     private Button scroll;
+    private Button testIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         level.setOnClickListener(this);
         multipleentries.setOnClickListener(this);
         scroll.setOnClickListener(this);
+        testIntent.setOnClickListener(this);
     }
 
     private void initView() {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         level = findViewById(R.id.level);
         multipleentries = findViewById(R.id.multipleentries);
         scroll = findViewById(R.id.scroll);
-
+        testIntent = findViewById(R.id.testIntent);
     }
 
     @Override
@@ -89,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.scroll:
                 Intent intent6 = new Intent(this, ScrollActivity.class);
                 startActivity(intent6);
+                break;
+            case R.id.testIntent:
+                Intent intent7 = new Intent(this, OneActivity.class);
+                startActivity(intent7);
                 break;
         }
     }
