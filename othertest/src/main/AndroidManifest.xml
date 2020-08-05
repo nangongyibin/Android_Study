@@ -33,5 +33,6 @@
             android:launchMode="singleTask" />
         <activity android:name=".TwoActivity" />
         <activity android:name=".VgActivity" />
+        <activity android:name=".MenuActivity" />
     </application>
 </manifest>

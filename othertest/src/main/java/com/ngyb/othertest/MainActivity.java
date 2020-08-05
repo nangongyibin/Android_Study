@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button scroll;
     private Button testIntent;
     private Button vg;
+    private Button menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         scroll.setOnClickListener(this);
         testIntent.setOnClickListener(this);
         vg.setOnClickListener(this);
+        menu.setOnClickListener(this);
     }
 
     private void initView() {
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         scroll = findViewById(R.id.scroll);
         testIntent = findViewById(R.id.testIntent);
         vg = findViewById(R.id.vg);
+        menu = findViewById(R.id.menu);
     }
 
     @Override
@@ -102,6 +105,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.vg:
                 Intent intent8 = new Intent(this, VgActivity.class);
                 startActivity(intent8);
+                break;
+            case R.id.menu:
+                Intent intent9 = new Intent(this, MenuActivity.class);
+                startActivity(intent9);
                 break;
         }
     }
