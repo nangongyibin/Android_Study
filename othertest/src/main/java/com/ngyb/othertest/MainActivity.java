@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button vg;
     private Button menu;
     private Button asynctask;
+    private Button edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vg.setOnClickListener(this);
         menu.setOnClickListener(this);
         asynctask.setOnClickListener(this);
+        edit.setOnClickListener(this);
     }
 
     private void initView() {
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vg = findViewById(R.id.vg);
         menu = findViewById(R.id.menu);
         asynctask = findViewById(R.id.asynctask);
+        edit = findViewById(R.id.edit);
     }
 
     @Override
@@ -116,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.asynctask:
                 Intent intent10 = new Intent(this, AsyncTaskActivity.class);
                 startActivity(intent10);
+                break;
+            case R.id.edit:
+                Intent intent11 = new Intent(this, EditActivity.class);
+                startActivity(intent11);
                 break;
         }
     }

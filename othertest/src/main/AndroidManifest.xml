@@ -35,5 +35,6 @@
         <activity android:name=".VgActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".AsyncTaskActivity" />
+        <activity android:name=".EditActivity" />
     </application>
 </manifest>
