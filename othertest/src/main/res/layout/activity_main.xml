@@ -73,4 +73,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Menu" />
+
+    <Button
+        android:id="@+id/asynctask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask" />
 </LinearLayout>

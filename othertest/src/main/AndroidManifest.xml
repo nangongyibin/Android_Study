@@ -34,5 +34,6 @@
         <activity android:name=".TwoActivity" />
         <activity android:name=".VgActivity" />
         <activity android:name=".MenuActivity" />
+        <activity android:name=".AsyncTaskActivity" />
     </application>
 </manifest>

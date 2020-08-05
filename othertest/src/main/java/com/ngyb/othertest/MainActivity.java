@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button testIntent;
     private Button vg;
     private Button menu;
+    private Button asynctask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         testIntent.setOnClickListener(this);
         vg.setOnClickListener(this);
         menu.setOnClickListener(this);
+        asynctask.setOnClickListener(this);
     }
 
     private void initView() {
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         testIntent = findViewById(R.id.testIntent);
         vg = findViewById(R.id.vg);
         menu = findViewById(R.id.menu);
+        asynctask = findViewById(R.id.asynctask);
     }
 
     @Override
@@ -109,6 +112,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.menu:
                 Intent intent9 = new Intent(this, MenuActivity.class);
                 startActivity(intent9);
+                break;
+            case R.id.asynctask:
+                Intent intent10 = new Intent(this, AsyncTaskActivity.class);
+                startActivity(intent10);
                 break;
         }
     }
