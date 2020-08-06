@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Process;
 
+import org.scilab.forge.jlatexmath.core.AjLatexMath;
+
+import io.github.kbiakov.codeview.classifier.CodeProcessor;
+
 /**
  * 作者：南宫燚滨
  * 描述：
@@ -22,5 +26,8 @@ public class MyApplication extends Application {
                 Process.killProcess(Process.myPid());
             }
         });
+
+        AjLatexMath.init(this);
+        CodeProcessor.init(this);
     }
 }

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button menu;
     private Button asynctask;
     private Button edit;
+    private Button uncertainty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         menu.setOnClickListener(this);
         asynctask.setOnClickListener(this);
         edit.setOnClickListener(this);
+        uncertainty.setOnClickListener(this);
     }
 
     private void initView() {
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         menu = findViewById(R.id.menu);
         asynctask = findViewById(R.id.asynctask);
         edit = findViewById(R.id.edit);
+        uncertainty = findViewById(R.id.uncertainty);
     }
 
     @Override
@@ -123,6 +126,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.edit:
                 Intent intent11 = new Intent(this, EditActivity.class);
                 startActivity(intent11);
+                break;
+            case R.id.uncertainty:
+                Intent intent12 = new Intent(this, UncertaintyActivity.class);
+                startActivity(intent12);
                 break;
         }
     }

@@ -36,5 +36,6 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".AsyncTaskActivity" />
         <activity android:name=".EditActivity" />
+        <activity android:name=".UncertaintyActivity" />
     </application>
 </manifest>

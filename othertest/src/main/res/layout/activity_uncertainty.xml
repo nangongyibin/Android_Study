@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="JJF1164-2018气相色谱-质谱联用仪校准信噪比的测量不确定度评定"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_18" />
+
+    <RelativeLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6">
+
+        <TextView
+            android:id="@+id/tv1_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1、"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv1_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv1_1"
+            android:layout_toRightOf="@id/tv1_1"
+            android:text="测量模型"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv1_1"
+            android:layout_toEndOf="@id/tv1_2"
+            android:layout_toRightOf="@id/tv1_2"
+            android:text="本次校准的测量模型为:"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+            android:id="@+id/frtv3_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv2_1"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tv3_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv2_1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="(1)"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv4_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv3_2"
+            android:layout_alignStart="@id/tv2_1"
+            android:layout_alignLeft="@id/tv2_1"
+            android:text="式中"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv5_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv4_1"
+            android:layout_alignStart="@id/tv2_1"
+            android:layout_alignLeft="@id/tv2_1"
+            android:text="β-信噪比"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+            android:id="@+id/frtv6_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv5_1"
+            android:layout_alignStart="@id/tv5_1"
+            android:layout_alignLeft="@id/tv5_1" />
+
+        <TextView
+            android:id="@+id/tv6_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv5_1"
+            android:layout_toEndOf="@id/frtv6_1"
+            android:layout_toRightOf="@id/frtv6_1"
+            android:text="--特征离子（m/Z）的峰高；"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+            android:id="@+id/frtv7_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv6_2"
+            android:layout_alignStart="@id/tv5_1"
+            android:layout_alignLeft="@id/tv5_1" />
+
+        <TextView
+            android:id="@+id/tv7_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv6_2"
+            android:layout_toEndOf="@id/frtv7_1"
+            android:layout_toRightOf="@id/frtv6_1"
+            android:text="--基线噪声。"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="使用未稀释标准物质进行校准"
+            android:textColor="@android:color/holo_red_light" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="使用稀释标准物质进行校准"
+            android:textColor="@android:color/holo_red_light" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

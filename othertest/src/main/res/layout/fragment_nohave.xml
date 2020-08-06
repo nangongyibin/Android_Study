@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\t\t\t\t公式（1）中"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                android:id="@+id/frtv1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="为："
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                android:id="@+id/frtv2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="(2)"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv3_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\t\t\t\t式中："
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv4_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\t\t\t\tK --单位质量响应值，为常数；"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv5_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\t\t\t\tc--所用溶液标准物质的质量浓度；"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv6_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\t\t\t\tV--进样体积。"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv7_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2、"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/tv7_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv7_1"
+                android:layout_toRightOf="@id/tv7_1"
+                android:text="不确定度来源与分析"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/tv8_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv7_1"
+                android:text="2.1、"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/tv8_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv7_1"
+                android:layout_toEndOf="@id/tv8_1"
+                android:layout_toRightOf="@id/tv8_1"
+                android:text="测量重复性引入的不确定度分量"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                android:id="@+id/frtv8_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv7_1"
+                android:layout_toEndOf="@id/tv8_2"
+                android:layout_toRightOf="@id/tv8_2" />
+
+            <TextView
+                android:id="@+id/tv9_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv8_1"
+                android:layout_alignStart="@id/tv7_2"
+                android:layout_alignLeft="@id/tv7_2"
+                android:text="依据："
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                android:id="@+id/frtv10_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv9_1"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv9_1"
+                android:layout_toEndOf="@id/frtv10_1"
+                android:layout_toRightOf="@id/frtv10_1"
+                android:text="(3)"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+
+                android:id="@+id/tv11_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frtv10_1"
+                android:text="\t\t\t\t式中;"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/tv12_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv11_1"
+                android:text="\t\t\t\ts--实验标准偏差；"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/tv13_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv12_1"
+                android:text="\t\t\t\t"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                android:id="@+id/frtv13_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv12_1"
+                android:layout_toEndOf="@id/tv13_1"
+                android:layout_toRightOf="@id/tv13_1" />
+
+            <TextView
+                android:id="@+id/tv13_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv12_1"
+                android:layout_toEndOf="@id/frtv13_2"
+                android:layout_toRightOf="@id/frtv13_2"
+                android:text="--为6次信噪比测量值的平均值；"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/tv14_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv13_1"
+                android:text="\t\t\t\t"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                android:id="@+id/frtv14_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv13_3"
+                android:layout_toEndOf="@id/tv14_1"
+                android:layout_toRightOf="@id/tv14_1" />
+
+            <TextView
+                android:id="@+id/tv14_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv13_3"
+                android:layout_toEndOf="@id/frtv14_2"
+                android:layout_toRightOf="@id/frtv14_2"
+                android:text="--第i次测量的信噪比结果。"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="计算6次测得值的平均值的相对偏差为："
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="表1：信噪比较标准结果表："
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="7"
+            android:rowCount="5">
+
+            <TextView
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:text="序号"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:text="1" />
+
+            <TextView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:text="2" />
+
+            <TextView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:text="3" />
+
+            <TextView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:text="4" />
+
+            <TextView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:text="5" />
+
+            <TextView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:text="6" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="信噪比"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_18" />
+
+                <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                    android:id="@+id/line2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+            <EditText
+                android:id="@+id/et2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+            <EditText
+                android:id="@+id/et3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+
+            <EditText
+                android:id="@+id/et4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+
+            <EditText
+                android:id="@+id/et5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+            <EditText
+                android:id="@+id/et6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="平均值"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_18" />
+
+                <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                    android:id="@+id/line3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="6"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="实验标准偏差s"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_18" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="6"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="不确定度分量"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_18" />
+
+                <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                    android:id="@+id/line5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="6"
+                android:layout_gravity="fill"
+                android:background="@drawable/shape_table" />
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>
