@@ -37,5 +37,6 @@
         <activity android:name=".AsyncTaskActivity" />
         <activity android:name=".EditActivity" />
         <activity android:name=".UncertaintyActivity" />
+        <activity android:name=".DownloadActivity" />
     </application>
 </manifest>
